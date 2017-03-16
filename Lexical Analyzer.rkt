@@ -11,7 +11,7 @@
     (cons `(ID ,(string->symbol lexeme))
           (my-lex input-port))]
    
-     [(:+ (char-range #\0 #\9))  ;repetition of numbers 0 to 9
+     [(:: (:? #\-) (:+ (char-range #\0 #\9)))  ;repetition of numbers 0 to 9 pos and neg
    
   
     (cons `(INT ,(string->number lexeme))
